@@ -76,8 +76,43 @@ void printTree(TreeNode<int>*root){
     }
 }
 
+int numNodes(TreeNode<int>*root){
+    int ans = 1;
+    for(int i=0;i<root->children.size();i++){
+        ans+= numNodes(root->children[i]);
+    }
+    return ans;
+}
+
+int sumNodes(TreeNode<int>*root){
+    int sum = root->data;
+    for(int i=0;i<root->children.size();i++){
+        sum+= sumNodes(root->children[i]);
+    }
+    return sum;
+}
+int maxNodes(TreeNode<int>*root){
+    int cTerm = root->data;
+    for(int i=0;i<root->children.size();i++){
+        maxi  = max(maxNodes(root->children[i]),maxi);
+    }
+    return maxi;
+}
+int height(TreeNode<int>*root){
+    int he = 1;
+    int high = 0;
+    for(int i=0;i<root->children.size();i++){
+        he += height(root->children[i]);
+        high = max(he,high);
+    }
+    return high;
+}
 int main(){
     TreeNode<int>*root = takeInputLevelWise();
+    cout<<numNodes(root)<<endl;
+    cout<<sumNodes(root)<<endl;
+    cout<<maxNodes(root)<<endl;
+    cout<<height(root)<<endl;
 //    TreeNode<int>*root = new TreeNode<int>(1);
 //    TreeNode<int>*node1 = new TreeNode<int>(2);
 //    TreeNode<int>*node2 = new TreeNode<int>(3);

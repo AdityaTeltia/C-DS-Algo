@@ -1,31 +1,68 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        int n,k;
-        cin>>n>>k;
-        vector<int>ans;
-        for(int i=0;i<k;i++){
-            ans.push_back(i+1);
-        }
-        int sumUptok = 0;
-        for(int i=0;i<k;i++){
-            sumUptok += ans[i];
-        }
+int main() {
+	// your code goes here
+	int t;
+	cin >>t;
+	while(t--){
+	    int n,k,i,sum=0;
+	    cin>>n>>k;
+	    int a[n+1];
+	    for(i=1;i<=n;){
+	        if(k==0||k==n){
+	            break;
+	        }
+	        if(sum+i<=i+1&&k>0){
+	            a[i]=i;
+	            sum+=i;
+	            i++;
+	            k--;
+	            continue;
+	        }
+	        if(sum>i){
+	            a[i]=-i;
+	            sum-=i;
+	            i++;
+	            if(sum>0){
+	                k--;
+	            }
+	            continue;
+	        }
+	        if(sum+i>i+1&&k==1){
+	            a[i]=-i;
+	            i++;
+	            if(sum-i>0){
+	                break;
+	            }else{
+	                sum-=i;
+	                continue;
+	            }
 
+	        }
+	        if(sum+i>i+1&&k>1){
+	            a[i]=i;
+	            if(sum>0){
+	                k--;
+	            }
+	            sum+=i;
+	            i++;
+	        }
+	    }
+	    if(k==n){
+	        for(i=1;i<=n;i++){
+	            a[i]=i;
+	        }
+	    }else if(i<=n){
+	        for(;i<=n;i++){
+	        a[i]=-i;
+	        }
 
-        if(k<n){
-            ans.push_back(-1*sumUptok);
-            for(int i=k+1;i<n;i++){
-                ans.push_back(i);
-            }
-        }
-        for(int i=0;i<n;i++){
-            cout<<ans[i]<<" ";
-        }
-        cout<<endl;
-    }
+	    }
+	    for(i=1;i<=n;i++){
+	        cout<<a[i]<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
 }
