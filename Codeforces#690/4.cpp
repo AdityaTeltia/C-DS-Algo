@@ -5,13 +5,16 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        int n,m;
-        string s;
-        int count =0;
+        int n;
+        cin>>n;
+        int a[n];
         for(int i=0;i<n;i++){
-
+            cin>>a[i];
         }
-        cout<<count<<endl;
+        vector<int>ans(a,a+n);
+
+
+
     }
 
 }

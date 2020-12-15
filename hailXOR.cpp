@@ -28,10 +28,12 @@ int main(){
             for(int j=index+1;j<n;j++){
                 if(a[j]^power(p)<a[j]){
                     a[j] = a[j]^power(p);
+                }else{
+                    j=n-1;
                 }
             }
             if(a[index]==0){
-                index++;
+
             }
 
         }
