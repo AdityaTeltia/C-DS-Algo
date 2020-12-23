@@ -93,6 +93,7 @@ int sumNodes(TreeNode<int>*root){
 }
 int maxNodes(TreeNode<int>*root){
     int cTerm = root->data;
+    int maxi = INT_MIN;
     for(int i=0;i<root->children.size();i++){
         maxi  = max(maxNodes(root->children[i]),maxi);
     }
@@ -109,10 +110,10 @@ int height(TreeNode<int>*root){
 }
 int main(){
     TreeNode<int>*root = takeInputLevelWise();
-    cout<<numNodes(root)<<endl;
-    cout<<sumNodes(root)<<endl;
+//    cout<<numNodes(root)<<endl;
+//    cout<<sumNodes(root)<<endl;
     cout<<maxNodes(root)<<endl;
-    cout<<height(root)<<endl;
+//    cout<<height(root)<<endl;
 //    TreeNode<int>*root = new TreeNode<int>(1);
 //    TreeNode<int>*node1 = new TreeNode<int>(2);
 //    TreeNode<int>*node2 = new TreeNode<int>(3);

@@ -17,11 +17,6 @@ int main(){
         for(int i=0;i<balls;i++){
             cin>>arr[i]>>arr1[i];
         }
-
-
-
-
-
     }
 
 }
