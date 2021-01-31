@@ -2,13 +2,13 @@
 using namespace std;
 #define int long long
 
-//int DP(int n,int k,int*a){
-//    int dp[n+1];
-//    dp[0] = 0;
-//    for(int i=1;i<=n;i++){
-//
-//    }
-//}
+int DP(int n,int k,int*a){
+    int dp[n+1];
+    dp[0] = 0;
+    for(int i=1;i<=n;i++){
+        for(int j=0;j<)
+    }
+}
 
 
 int solve(int n,int k,int *a){
