@@ -5,19 +5,20 @@ using namespace std;
 
 
 int32_t main(){
+    aditya
     int t;
     cin>>t;
     while(t--){
         int n,x;
         cin>>n>>x;
-        int temp = sqrt(x);
-        int temp2 = ceil(sqrt(x));
-        if(x<=n){
-            cout<<"Yes"<<endl;
-        }else if(temp==temp2){
-            if(x<=n)cout<<"Yes"<<endl;
-        }else{
-            cout<<"No"<<endl;
+        for(int i=1;i<=n;i++){
+            if(x%i==0 && x/i <=n){
+                cout<<"Yes"<<endl;
+                goto end;
+            }
         }
+        cout<<"No"<<endl;
+        end:
+        continue;
     }
 }
